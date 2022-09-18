@@ -3,18 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 .container {
-    
-
+    width: 560px;
+}
+.div-rows {
+    display: flex;
 }
 
 
+.div-box {
+    border: 1px solid royalblue;
 
-.pixels {
-  
-}
-
-.pixels:hover {
-    background-color: black;
 }
