@@ -1,5 +1,5 @@
 const container = document.querySelector(".container");
-numSquares = 16;
+numSquares = 100;
 
 function createDivs(squaresNum) {
     for (let i = 0; i < squaresNum; i++) {
@@ -13,6 +13,9 @@ function createDivs(squaresNum) {
             divBox.style.width = `${widthHeight}px`
             divBox.style.height = `${widthHeight}px`
             rows.appendChild(divBox);
+            divBox.addEventListener("mouseenter", () =>{
+                divBox.style.backgroundColor = "black";
+            })
         } 
         
         }
