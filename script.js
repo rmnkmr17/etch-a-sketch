@@ -9,7 +9,11 @@ let btnRGB = document.querySelector("#btn-rgb");
 btnRGB.addEventListener("click", setRGB);
 
 let btnEraser = document.querySelector("#btn-eraser");
-btnEraser.addEventListener("click", eraseDivs)
+btnEraser.addEventListener("click", eraseDivs);
+
+let btnClear = document.querySelector("#btn-clear");
+btnClear.addEventListener("click", clearDivs);
+
 function createDivs(squaresNum) {
     const mainContainer = document.createElement("div");
     mainContainer.classList.add("main-container");
@@ -37,8 +41,6 @@ function createDivs(squaresNum) {
 createDivs(16);
 
 function setBlack() {
-    
-    
     let divBoxes = document.querySelectorAll(".div-box");
     divBoxes.forEach((div) => {
         div.addEventListener("mouseenter", () =>{
@@ -56,6 +58,12 @@ function setRGB() {
     })
 }
 
+function clearDivs() {
+    let divBoxes = document.querySelectorAll(".div-box");
+    divBoxes.forEach((div) => {
+            div.style.backgroundColor = "white";
+    })
+}
 function eraseDivs() {
     let divBoxes = document.querySelectorAll(".div-box");
     divBoxes.forEach((div) => {
@@ -66,8 +74,8 @@ function eraseDivs() {
 }
 
 
-resetButton.addEventListener("click", () => {
 
+resetButton.addEventListener("click", () => {
     let input = Number(prompt("How many squares per side do you want?", "Min 1 = Max 100"));
     if (input > 100 || input < 1) {
         alert("You picked an invalid number.");
@@ -78,6 +86,7 @@ resetButton.addEventListener("click", () => {
         createDivs(input);
         setBlack();
         setRGB();
+        clearDivs();
     }
 })
 
