@@ -37,9 +37,11 @@ function createDivs(squaresNum) {
 createDivs(16);
 
 function setBlack() {
+    
+    
     let divBoxes = document.querySelectorAll(".div-box");
     divBoxes.forEach((div) => {
-        div.addEventListener("mousedown", () =>{
+        div.addEventListener("mouseenter", () =>{
             div.style.backgroundColor = "black";
         })
     })
